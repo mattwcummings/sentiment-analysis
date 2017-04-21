@@ -1,0 +1,16 @@
+#Python 3
+#Developed from http://stackoverflow.com/questions/35559199/textblob-sentiment-analysis-on-a-csv-file
+
+import csv
+
+from textblob import TextBlob
+
+infile = ("C:\\Users\\matthewcummings\\Desktop\\python\\textanalysisexample.csv") ### insert your file!
+
+with open(infile, 'r') as csvfile:
+    rows = csv.reader(csvfile)
+    for row in rows:
+        sentence = row[0]
+        blob = TextBlob(sentence)
+        print (blob.sentiment[1]) #remove [1] get full scores 
+       
